@@ -94,7 +94,7 @@ public class Interactable : BaseInteractable
         if (!CheckCanFire())
             return;
 
-        if (isFiredOnTriggerEnter)
+        if (isFiredOnTriggerEnter && isActiveAndEnabled)
         {
             if (string.IsNullOrEmpty(triggerTag) || other.CompareTag(triggerTag))
             {
@@ -108,7 +108,7 @@ public class Interactable : BaseInteractable
         if (!CheckCanFire())
             return;
 
-        if (isFiredOnTriggerExit)
+        if (isFiredOnTriggerExit && isActiveAndEnabled)
         {
             if (string.IsNullOrEmpty(triggerTag) || other.CompareTag(triggerTag))
             {

@@ -62,7 +62,7 @@ public class StateInteractable : BaseInteractable
         if (!CheckCanFire())
             return;
 
-        if (isTriggeredFromCameraInput)
+        if (isTriggeredFromCameraInput && isActiveAndEnabled)
         {
             if (minDistanceToFireFromCameraInput > 0 && minDistanceToFireFromCameraInput >= hitDistance)
                 return;
@@ -76,7 +76,7 @@ public class StateInteractable : BaseInteractable
         if (!CheckCanFire())
             return;
 
-        if (isFiredOnTriggerEnter)
+        if (isFiredOnTriggerEnter && isActiveAndEnabled)
         {
             if (string.IsNullOrEmpty(triggerTag) || other.CompareTag(triggerTag))
             {
