@@ -10,16 +10,24 @@ using UnityEditorInternal;
 public class InteractableEditor : Editor
 {
     SerializedProperty interactableEffects;
-    ReorderableList list;
+    SerializedProperty secondaryInteractableEffects;
+
+    ReorderableList baselist;
+    ReorderableList secondList;
 
     private void OnEnable()
     {
         interactableEffects = serializedObject.FindProperty("interactableEffects");
+        secondaryInteractableEffects = serializedObject.FindProperty("secondaryInteractableEffects");
 
-        list = new ReorderableList(serializedObject, interactableEffects, true, true, true, true);
+        baselist = new ReorderableList(serializedObject, interactableEffects, true, true, true, true);
+        secondList = new ReorderableList(serializedObject, secondaryInteractableEffects, true, true, true, true);
 
-        list.drawElementCallback = DrawListItems; 
-        list.drawHeaderCallback = DrawHeader; 
+        baselist.drawElementCallback = DrawBaseListItems; 
+        baselist.drawHeaderCallback = DrawBaseHeader;
+
+        secondList.drawElementCallback = DrawSecondaryListItems;
+        secondList.drawHeaderCallback = DrawSecondaryHeader;
     }
 
     public override void OnInspectorGUI()
@@ -29,10 +37,23 @@ public class InteractableEditor : Editor
 
         GUILayout.Space(10);
 
-        list.DoLayoutList();
+        baselist.DoLayoutList();
+        if (((Interactable)target).isFlipFlop)
+        {
+            secondList.DoLayoutList();
+        }
+
+        GUILayout.Space(10);
 
         if (Application.isPlaying)
         {
+            GUILayout.BeginHorizontal();
+            GUILayout.Label($"DEBUG");
+            GUILayout.EndHorizontal();
+
+            GUILayout.Label($"Has Fired: {((Interactable)target).hasFired}");
+            GUILayout.Label($"Flip flop State: {((Interactable)target).flipFlopState}");
+
             if (GUILayout.Button("Test Fire"))
             {
                 ((Interactable)target).Fire();
@@ -42,6 +63,7 @@ public class InteractableEditor : Editor
             {
                 ((Interactable)target).hasFired = false;
             }
+
         }
 
         serializedObject.ApplyModifiedProperties();
@@ -49,10 +71,19 @@ public class InteractableEditor : Editor
 
 
     // Draws the elements on the list
-    void DrawListItems(Rect rect, int index, bool isActive, bool isFocused)
+    void DrawBaseListItems(Rect rect, int index, bool isActive, bool isFocused)
+    {
+        DrawListItems(baselist, rect, index, isActive, isFocused);
+    }
+
+    void DrawSecondaryListItems(Rect rect, int index, bool isActive, bool isFocused)
+    {
+        DrawListItems(secondList, rect, index, isActive, isFocused);
+    }
+
+    void DrawListItems(ReorderableList list, Rect rect, int index, bool isActive, bool isFocused)
     {
         SerializedProperty element = list.serializedProperty.GetArrayElementAtIndex(index); // The element in the list
-
 
         EditorGUI.LabelField(
             new Rect(rect.x, rect.y, 250, EditorGUIUtility.singleLineHeight),
@@ -60,19 +91,33 @@ public class InteractableEditor : Editor
             );
 
         EditorGUI.PropertyField(
-               new Rect(rect.x + 100, rect.y, 300, EditorGUIUtility.singleLineHeight),               
+               new Rect(rect.x + 100, rect.y, 300, EditorGUIUtility.singleLineHeight),
                element,
                GUIContent.none
            );
-
-
     }
+
 
     //Draws the header
-    void DrawHeader(Rect rect)
+    void DrawBaseHeader(Rect rect)
     {
-        string name = "Interactable Effect Order";
+        string name = "Interactable Effect";
+
+        if (((Interactable)target).isFlipFlop)
+            name = "Interactable Effects ( Off -> On )";
+
         EditorGUI.LabelField(rect, name);
     }
+
+    void DrawSecondaryHeader(Rect rect)
+    {
+        string name = "Interactable Effect Order";
+
+        if (((Interactable)target).isFlipFlop)
+            name = "Interactable Effects ( On -> Off )";
+
+        EditorGUI.LabelField(rect, name);
+    }
+
 }
 #endif
