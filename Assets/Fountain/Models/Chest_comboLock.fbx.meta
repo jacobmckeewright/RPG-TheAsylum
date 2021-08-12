@@ -3,7 +3,17 @@ guid: 93e4d11e48eb4bc45949133400ab697e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ComboChest_
+    second: {fileID: 2100000, guid: 0170ca4985677ed4d90cecb2aa48f8b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NumbPad_
+    second: {fileID: 2100000, guid: ef3556cf1ee503b459ab69d126c0182e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
