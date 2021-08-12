@@ -546,11 +546,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6655030272000750020}
   - component: {fileID: 2803017910004535410}
-  - component: {fileID: 3416713596869559185}
   - component: {fileID: 7229937274888702493}
   - component: {fileID: 3557470305517094164}
   - component: {fileID: 5254416635488305973}
   - component: {fileID: 24402912279242538}
+  - component: {fileID: 1074035722170853344}
   m_Layer: 0
   m_Name: Wheel_04_SPINNER_Object
   m_TagString: Untagged
@@ -593,19 +593,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &3416713596869559185
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850811331605824835}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 3, z: 3}
-  m_Center: {x: -0.25, y: -0.0014955401, z: 0}
 --- !u!114 &7229937274888702493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,10 +613,6 @@ MonoBehaviour:
   triggerTag: 
   startingState: 0
   interactableEffects:
-  - stateInteractableEffects:
-    - {fileID: 24402912279242538}
-    - {fileID: 3557470305517094164}
-    - {fileID: 5254416635488305973}
   - stateInteractableEffects:
     - {fileID: 24402912279242538}
     - {fileID: 3557470305517094164}
@@ -703,6 +686,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateInteractable: {fileID: 7229937274888702493}
+--- !u!64 &1074035722170853344
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850811331605824835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5100737731849963394, guid: 5992f4fd765cffb47abf3aabeac27cbd, type: 3}
 --- !u!1 &2009137437150775000
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,11 +710,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4547973529358997669}
   - component: {fileID: 4746198822785269742}
-  - component: {fileID: 1050540287526737754}
   - component: {fileID: 7020106068260809711}
   - component: {fileID: 800809011034487010}
   - component: {fileID: 1848757288585760907}
   - component: {fileID: 172505811}
+  - component: {fileID: 488920925042251547}
   m_Layer: 0
   m_Name: Wheel_01_SPINNER_Object
   m_TagString: Untagged
@@ -760,19 +757,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1050540287526737754
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009137437150775000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 3, z: 3}
-  m_Center: {x: -0.25, y: -0.0014955401, z: 0}
 --- !u!114 &7020106068260809711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,10 +777,6 @@ MonoBehaviour:
   triggerTag: 
   startingState: 0
   interactableEffects:
-  - stateInteractableEffects:
-    - {fileID: 172505811}
-    - {fileID: 800809011034487010}
-    - {fileID: 1848757288585760907}
   - stateInteractableEffects:
     - {fileID: 172505811}
     - {fileID: 800809011034487010}
@@ -870,6 +850,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateInteractable: {fileID: 7020106068260809711}
+--- !u!64 &488920925042251547
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009137437150775000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5100737731849963394, guid: 5992f4fd765cffb47abf3aabeac27cbd, type: 3}
 --- !u!1 &2067383128843879004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,11 +1334,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2013930882341391183}
   - component: {fileID: 4035865425889630068}
-  - component: {fileID: 4885126577807335480}
   - component: {fileID: 6565997185273557638}
   - component: {fileID: 8684941919601849569}
   - component: {fileID: 2280399163125378628}
   - component: {fileID: 3462571833473208096}
+  - component: {fileID: 2446713067075377413}
   m_Layer: 0
   m_Name: Wheel_02_SPINNER_Object
   m_TagString: Untagged
@@ -1387,19 +1381,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &4885126577807335480
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5182638142006707457}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 3, z: 3}
-  m_Center: {x: -0.25, y: -0.0014955401, z: 0}
 --- !u!114 &6565997185273557638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1420,10 +1401,6 @@ MonoBehaviour:
   triggerTag: 
   startingState: 0
   interactableEffects:
-  - stateInteractableEffects:
-    - {fileID: 3462571833473208096}
-    - {fileID: 8684941919601849569}
-    - {fileID: 2280399163125378628}
   - stateInteractableEffects:
     - {fileID: 3462571833473208096}
     - {fileID: 8684941919601849569}
@@ -1497,6 +1474,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateInteractable: {fileID: 6565997185273557638}
+--- !u!64 &2446713067075377413
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182638142006707457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5100737731849963394, guid: 5992f4fd765cffb47abf3aabeac27cbd, type: 3}
 --- !u!1 &5523910396608382951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1701,7 @@ GameObject:
   - component: {fileID: 4255768536598861249}
   - component: {fileID: 5486452001315363692}
   - component: {fileID: 6771658686497036528}
+  - component: {fileID: 3115802960128486055}
   m_Layer: 0
   m_Name: ChestLid_Object
   m_TagString: Untagged
@@ -1763,8 +1755,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.1479254, y: 1.2707222, z: 2.5144825}
-  m_Center: {x: 0, y: 0.53536105, z: 1.0865192}
+  m_Size: {x: 2.0071068, y: 1.2707222, z: 2.5144825}
+  m_Center: {x: 2.0704093, y: 0.53536105, z: 1.0865192}
 --- !u!114 &2714923646152363737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,7 +1812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetAnimator: {fileID: 5117866089662231564}
   triggerName: OpenLid
-  delay: 2
+  delay: 0.2
 --- !u!114 &5486452001315363692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,6 +1857,19 @@ MonoBehaviour:
   - {fileID: 2112100912068313748}
   - {fileID: 6626447589731509932}
   state: 1
+--- !u!65 &3115802960128486055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286507415943879004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9936364, y: 1.2707222, z: 2.5144825}
+  m_Center: {x: -2.0771446, y: 0.53536105, z: 1.0865192}
 --- !u!1 &6626447589731509932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,11 +2324,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7346797623024691256}
   - component: {fileID: 5308537502699079421}
-  - component: {fileID: 5801663064669164561}
   - component: {fileID: 582784351489837206}
   - component: {fileID: 7410071808102490459}
   - component: {fileID: 2414511117636373583}
   - component: {fileID: 7532016255871296402}
+  - component: {fileID: 7979814338544005640}
   m_Layer: 0
   m_Name: Wheel_03_SPINNER_Object
   m_TagString: Untagged
@@ -2366,19 +2371,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &5801663064669164561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8876014434091409730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 3, z: 3}
-  m_Center: {x: -0.25, y: -0.0014955401, z: 0}
 --- !u!114 &582784351489837206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,10 +2391,6 @@ MonoBehaviour:
   triggerTag: 
   startingState: 0
   interactableEffects:
-  - stateInteractableEffects:
-    - {fileID: 7532016255871296402}
-    - {fileID: 7410071808102490459}
-    - {fileID: 2414511117636373583}
   - stateInteractableEffects:
     - {fileID: 7532016255871296402}
     - {fileID: 7410071808102490459}
@@ -2476,3 +2464,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateInteractable: {fileID: 582784351489837206}
+--- !u!64 &7979814338544005640
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876014434091409730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5100737731849963394, guid: 5992f4fd765cffb47abf3aabeac27cbd, type: 3}
