@@ -44,6 +44,8 @@ public class StateInteractable : BaseInteractable
 
     public int curState { private set; get; }
 
+    public int MaxStates => interactableEffects.Length;
+
     public void Start()
     {
         if (isFiredOnTriggerEnter || isFiredOnTriggerExit)
@@ -99,14 +101,14 @@ public class StateInteractable : BaseInteractable
         }
     }
 
-    private bool CheckCanFire()
+    public override bool CheckCanFire()
     {
         if (delayToFireAgain >= 0 && (DateTime.Now - lastTimeFired).TotalSeconds < delayToFireAgain)
             return false;
 
         return true;
     }
-
+   
     public override void Fire()
     {
         StateInteractable_EffectList effectList = interactableEffects[curState];

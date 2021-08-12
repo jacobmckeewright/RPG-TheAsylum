@@ -117,7 +117,7 @@ public class Interactable : BaseInteractable
         }
     }
 
-    private bool CheckCanFire()
+    public override bool CheckCanFire()
     {
         if (hasFired && onlyFireOnce)
             return false;

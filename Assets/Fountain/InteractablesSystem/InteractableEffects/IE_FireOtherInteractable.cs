@@ -11,10 +11,11 @@ public class IE_FireOtherInteractable : InteractableEffect
     public override void Fire()
     {
         if (interactable != null)
-            interactable.Fire();
+        {
+            if (interactable.CheckCanFire())
+                interactable.Fire();
+        }
         else
             Debug.LogWarning("[Interactable] [FireOtherInteractable] interactable is null");
     }
-
-
 }

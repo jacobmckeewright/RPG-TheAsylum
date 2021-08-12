@@ -104,14 +104,13 @@ public class CondtionalInteractable : BaseInteractable
         }
     }
 
-    private bool CheckCanFire()
+    public override bool CheckCanFire()
     {
         if (hasFired && onlyFireOnce)
             return false;
 
         if (delayToFireAgain >= 0 && (DateTime.Now - lastTimeFired).TotalSeconds < delayToFireAgain)
             return false;
-
 
         if (!CheckConditionalStatements())
             return false;
@@ -302,7 +301,6 @@ public class CondtionalInteractable : BaseInteractable
             effect.Fire();
         }
         
-
         hasFired = true;
         lastTimeFired = DateTime.Now;
     }
