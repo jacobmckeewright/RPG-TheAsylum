@@ -47,6 +47,10 @@ public class IE_SetAnimValue : InteractableEffect
     [Tooltip("Data Type of the animator property to change")]
     private AnimValueType valueType = AnimValueType.Bool;
 
+    [SerializeField]
+    [Tooltip("Time in seconds before value is set")]
+    private float delay = 0.0f;
+
     [HideInInspector]
     public bool boolValue = false;
     
@@ -66,21 +70,44 @@ public class IE_SetAnimValue : InteractableEffect
     {
         if (targetAnimator != null)
         {
-            switch (valueType)
+            if (delay > 0)
+                StartCoroutine(DelayFire());
+            else
             {
-                case AnimValueType.Bool:
-                    targetAnimator.SetBool(valueName, boolValue);
-                    break;
-                case AnimValueType.Integer:
-                    targetAnimator.SetInteger(valueName, intValue);
-                    break;
-                case AnimValueType.Float:
-                    targetAnimator.SetFloat(valueName, floatValue);
-                    break;
+                switch (valueType)
+                {
+                    case AnimValueType.Bool:
+                        targetAnimator.SetBool(valueName, boolValue);
+                        break;
+                    case AnimValueType.Integer:
+                        targetAnimator.SetInteger(valueName, intValue);
+                        break;
+                    case AnimValueType.Float:
+                        targetAnimator.SetFloat(valueName, floatValue);
+                        break;
+                }
             }
         }
         else
             Debug.LogWarning("[Interactable] [TriggerAnim] targetAnimator is null");
+    }
+
+    public IEnumerator DelayFire()
+    {
+        yield return new WaitForSeconds(delay);
+
+        switch (valueType)
+        {
+            case AnimValueType.Bool:
+                targetAnimator.SetBool(valueName, boolValue);
+                break;
+            case AnimValueType.Integer:
+                targetAnimator.SetInteger(valueName, intValue);
+                break;
+            case AnimValueType.Float:
+                targetAnimator.SetFloat(valueName, floatValue);
+                break;
+        }
     }
 
     public enum AnimValueType
